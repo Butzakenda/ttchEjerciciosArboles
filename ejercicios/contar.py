@@ -55,11 +55,11 @@ class BinaryTree:
                 self._insert_recursive(_current_node.right, key)
             
         
-    def _inorder_traversal(self,Node):
+    def _count(self,Node):
         if Node is not None:
-            self._inorder_traversal(Node.left)
+            self._count(Node.left)
             print(Node.key, end=" ")
-            self._inorder_traversal(Node.right)
+            self._count(Node.right)
         
             
              
@@ -72,5 +72,5 @@ tree.insert(2)
 tree.insert(4)   
 # Recorrido en orden (de menor a mayor)
 print("Recorrido en orden:")
-tree._inorder_traversal(tree.root)
+tree._count(tree.root)
         

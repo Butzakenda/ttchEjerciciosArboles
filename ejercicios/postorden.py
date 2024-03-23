@@ -58,11 +58,11 @@ class BinaryTree:
     def _inorder_traversal(self,Node):
         if Node is not None:
             self._inorder_traversal(Node.left)
-            print(Node.key, end=" ")
             self._inorder_traversal(Node.right)
+            print(Node.key, end=" ")
         
-            
              
+              
 tree = BinaryTree()
    
 tree.insert(5)
@@ -70,6 +70,9 @@ tree.insert(3)
 tree.insert(7)
 tree.insert(2)
 tree.insert(4)   
+# Expected
+# 2 4 3 7 5
+
 # Recorrido en orden (de menor a mayor)
 print("Recorrido en orden:")
 tree._inorder_traversal(tree.root)

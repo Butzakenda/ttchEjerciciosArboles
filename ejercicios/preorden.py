@@ -55,22 +55,25 @@ class BinaryTree:
                 self._insert_recursive(_current_node.right, key)
             
         
-    def _inorder_traversal(self,Node):
+    def _preorder_traversal(self,Node):
         if Node is not None:
-            self._inorder_traversal(Node.left)
             print(Node.key, end=" ")
-            self._inorder_traversal(Node.right)
+            self._preorder_traversal(Node.left)
+            self._preorder_traversal(Node.right)
         
-            
+              
              
 tree = BinaryTree()
    
 tree.insert(5)
-tree.insert(3)
+tree.insert(3) 
 tree.insert(7)
 tree.insert(2)
-tree.insert(4)   
-# Recorrido en orden (de menor a mayor)
-print("Recorrido en orden:")
-tree._inorder_traversal(tree.root)
+tree.insert(4)  
+ 
+# Expected
+# 5 3 2 4 7
+
+print("Recorrido en pre-orden:")
+tree._preorder_traversal(tree.root)
         
